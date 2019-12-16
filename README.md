@@ -4,6 +4,11 @@
 
 Add the repo via:
 ```console
-$ helm repo add cp-ministryofjustice https://ministryofjustice.github.io/helm-charts/
+$ helm repo add cp-ministryofjustice https://ministryofjustice.github.io/cloud-platform-helm-charts
 ```
+:q
+## Regenerate `index.yaml`
 
+```console
+helm repo index --url  https://ministryofjustice.github.io/cloud-platform-helm-charts/ --merge index.yaml .
+```
