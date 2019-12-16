@@ -1,4 +1,4 @@
-# ministryofjustice.github.io/helm-charts
+# Cloud Platform helm charts repository (ministryofjustice.github.io/cloud-platform-helm-charts)
 
 [Helm](https://helm.sh) repo for different internal charts which are installed on [Kubernetes](https://kubernetes.io)
 
