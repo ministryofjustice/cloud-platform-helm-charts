@@ -1,4 +1,4 @@
-# Cloud Platform helm charts repositor
+# Cloud Platform helm charts repository
 
 Cloud Platform [Helm](https://helm.sh) repository to store the internal helm charts. 
 
