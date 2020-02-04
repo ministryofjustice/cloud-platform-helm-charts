@@ -2,7 +2,7 @@
 
 Cloud Platform [Helm](https://helm.sh) repository to store the internal helm charts. 
 
-The main advantage Github pages offers is directly related with maintainability: we don't have to keep an eye on any service, everything happens inside `gh-pages` branch (**inside git**)
+The main advantage is directly related to maintainability: we don’t need to keep an eye ay service, just in source code.
 
 ## How to use this repository 
 
