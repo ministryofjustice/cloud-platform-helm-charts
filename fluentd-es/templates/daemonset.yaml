@@ -37,9 +37,7 @@ spec:
       priorityClassName: node-critical
       serviceAccountName: {{ .Release.Name }}
       tolerations:
-      # This needs to run on all nodes, including masters.
-      - key: node-role.kubernetes.io/master
-        effect: NoSchedule
+        {{ toYaml .Values.tolerations | indent 8 }}
       containers:
       - name: {{  template "fluentd-es.fullname" . }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
