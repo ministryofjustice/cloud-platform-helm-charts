@@ -36,8 +36,6 @@ spec:
     spec:
       priorityClassName: node-critical
       serviceAccountName: {{ .Release.Name }}
-      tolerations:
-{{ toYaml .Values.tolerations | indent 8 }}
       containers:
       - name: {{  template "fluentd-es.fullname" . }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
@@ -76,3 +74,7 @@ spec:
       - name: config-volume
         configMap:
           name: {{  template "fluentd-es.fullname" . }}-config
+{{- if .Values.tolerations }}
+      tolerations:
+{{ toYaml .Values.tolerations | indent 6 }}
+{{- end }}
