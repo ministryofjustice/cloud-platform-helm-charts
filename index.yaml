@@ -3,7 +3,16 @@ entries:
   fluentd-es:
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2020-01-21T10:49:54.41747Z"
+    created: "2020-03-23T09:39:48.402165Z"
+    description: A Helm chart for fluentd-es
+    digest: fa8878ac3c6a8c60afcd9f8c76c4a3d36e3538d8792ba6ba677d0457256fa779
+    name: fluentd-es
+    urls:
+    - https://ministryofjustice.github.io/cloud-platform-helm-charts/fluentd-es-2.8.0.tgz
+    version: 2.8.0
+  - apiVersion: v1
+    appVersion: v2.7.0
+    created: "2020-03-23T09:39:48.401648Z"
     description: A Helm chart for fluentd-es
     digest: dfee6c4784b26284aa59fbcb6ddb7bfd93b68058f497f47bda37a27c847e7e85
     name: fluentd-es
@@ -12,7 +21,7 @@ entries:
     version: 2.7.0
   kuberos:
   - apiVersion: v1
-    created: "2020-01-21T10:49:54.417916Z"
+    created: "2020-03-23T09:39:48.402745Z"
     description: cloud-platform kuberos
     digest: 456898e7ab790231c21f2be21d32a70ae2417d0fdda40b3452944ebcd76f9b34
     home: https://github.com/ministryofjustice/kuberos
@@ -23,7 +32,7 @@ entries:
   prometheus-ecr-exporter:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-01-21T10:49:54.418316Z"
+    created: "2020-03-23T09:39:48.403994Z"
     description: A Helm chart for prometheus ecr-exporter
     digest: 226b98a84def8414ffcf167443e2b700d315f7304250c3c78547bf655599f1c8
     home: https://github.com/ministryofjustice/prometheus_ecr_exporter
@@ -38,4 +47,4 @@ entries:
     urls:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/prometheus-ecr-exporter-0.1.0.tgz
     version: 0.1.0
-generated: "2020-01-21T10:49:54.415961Z"
+generated: "2020-03-23T09:39:48.40028Z"

@@ -10,6 +10,14 @@ fluent_elasticsearch_host:
 fluent_elasticsearch_audit_host:
 fluent_kubernetes_cluster_name:
 
+tolerations:
+  - key: node-role.kubernetes.io/master
+    effect: NoSchedule
+  - key: "monitoring-node"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
+
 serviceMonitor:
   # When set true then use a ServiceMonitor to configure scraping
   enabled: false
