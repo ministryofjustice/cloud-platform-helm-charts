@@ -1,0 +1,36 @@
+{{- if .Values.circleci.enabled -}}
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1beta1
+metadata:
+  name: circleci
+rules:
+  - apiGroups:
+      - ""
+      - "extensions"
+      - "apps"
+      - "batch"
+    resources:
+      - "pods/portforward"
+      - "deployment"
+      - "secrets"
+      - "services"
+      - "pods"
+      - "jobs"
+    verbs:
+      - "patch"
+      - "get"
+      - "create"
+      - "delete"
+      - "list"
+  - apiGroups:
+      - "extensions"
+    resources:
+      - "deployments"
+      - "ingresses"
+    verbs:
+      - "get"
+      - "update"
+      - "delete"
+      - "create"
+      - "patch"
+{{- end }}
