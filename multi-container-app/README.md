@@ -46,7 +46,7 @@ helm del --purge multi-container-app
 | `postgresql.persistence.enabled` | Enable persistence using PVC | false |
 | `contentapi.replicaCount` | Number of replica pods used. | 1 |
 | `contentapi.image.repository` | The image repository location. | `ministryofjustice/cloud-platform-multi-container-demo-app`|
-| `contentapi.image.tag` | The image tag. | `worker-1.4` |
+| `contentapi.image.tag` | The image tag. | `worker-1.5` |
 | `contentapi.image.pullPolicy` | Whether the image should pull | `IfNotPresent` |
 | `contentapi.containetPort` | Container port to be used by the service  | `Always` |
 | `contentapi.service.type` | The type of service you wish to use | `ClusterIP` |
@@ -54,7 +54,7 @@ helm del --purge multi-container-app
 | `contentapi.service.targetPort` | The container port service will target for | `4567` |
 | `railsapp.replicaCount` | Used to set the number of replica pods used. | `1` |
 | `railsapp.image.repository` | The image repository location. | `ministryofjustice/cloud-platform-multi-container-demo-app`|
-| `railsapp.image.tag` | The image tag. | `rails-app-1.4` |
+| `railsapp.image.tag` | The image tag. | `rails-app-1.5` |
 | `railsapp.image.pullPolicy` | Whether the image should pull | `IfNotPresent` |
 | `railsapp.containerPort` | Container port to be used by the service  | `3000` |
 | `railsapp.service.type` | The type of service you wish to use | `ClusterIP` |
@@ -62,7 +62,7 @@ helm del --purge multi-container-app
 | `railsapp.service.targetPort` | The container port service will target for | `"3000"` |
 | `worker.replicaCount` | Used to set the number of replica pods used. | `1` |
 | `worker.image.repository` | The image repository location. | `ministryofjustice/cloud-platform-multi-container-demo-app`|
-| `worker.image.tag` | The image tag. | `worker-1.4` |
+| `worker.image.tag` | The image tag. | `worker-1.5` |
 | `worker.image.pullPolicy` | Whether the image should pull | `IfNotPresent` |
 | `worker.containetPort` | Container port to be used by the service  | `Always` |
 
