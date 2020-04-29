@@ -49,3 +49,12 @@ serviceMonitor:
 aws:
   region: eu-west-2
 #  role:
+
+serviceAccount:
+  # Specifies whether a ServiceAccount should be created
+  create: true
+  # annotations:
+  # Will add the provided map to the annotations for the crated serviceAccount
+  # e.g.
+  annotations:
+    eks.amazonaws.com/role-arn: arn:aws:iam::1234567890:role/prom-ecr-exporter-oidc
