@@ -57,4 +57,8 @@ serviceAccount:
   # Will add the provided map to the annotations for the crated serviceAccount
   # e.g.
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::1234567890:role/prom-ecr-exporter-oidc
+    eks.amazonaws.com/role-arn: arn:aws:iam::754256621582:role/ecr-exporter.mogaal.cloud-platform.service.justice.gov.uk
+
+securityContext:
+  runAsUser: 65534  # run as nobody user instead of root
+  fsGroup: 65534

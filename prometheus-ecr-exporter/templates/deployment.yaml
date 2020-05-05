@@ -54,6 +54,10 @@ spec:
       tolerations:
 {{ toYaml . | indent 8 }}
     {{- end }}
+    {{- with .Values.securityContext }}
+      securityContext:
+{{ toYaml . | indent 8 }}
+    {{- end }}
     {{- if .Values.serviceAccount.create }}
       serviceAccount: {{ template "prometheus-ecr-exporter.fullname" . }}
       serviceAccountName: {{ template "prometheus-ecr-exporter.fullname" . }}
