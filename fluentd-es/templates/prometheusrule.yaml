@@ -4,12 +4,13 @@ kind: PrometheusRule
 metadata:
   name: fluentd-es
   namespace: logging
-  k8s-app: fluentd-es
-  version: {{ .Values.image.tag }}
-  app: {{ .Release.Name }}
-  chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-  heritage: {{ .Release.Service }}
-  release: {{ .Release.Name }}
+  labels:
+    k8s-app: fluentd-es
+    version: {{ .Values.image.tag }}
+    app: {{ .Release.Name }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
 spec:
   groups:
   - name: fluentd
