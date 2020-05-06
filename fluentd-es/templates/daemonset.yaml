@@ -50,7 +50,7 @@ spec:
           value: {{ .Values.fluent_kubernetes_cluster_name }}
         resources:
           limits:
-            cpu: 500m
+            cpu: 1000m
             memory: 1000Mi
           requests:
             cpu: 10m
