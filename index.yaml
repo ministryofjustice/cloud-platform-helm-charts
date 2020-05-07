@@ -3,7 +3,16 @@ entries:
   fluentd-es:
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2020-05-06T10:11:48.345831+01:00"
+    created: "2020-05-07T16:00:32.273400112+01:00"
+    description: A Helm chart for fluentd-es
+    digest: f92169eee79041b5240e36a3c18e531a416de3e3036dc22f4de3c9e96d1bc099
+    name: fluentd-es
+    urls:
+    - https://ministryofjustice.github.io/cloud-platform-helm-charts/fluentd-es-2.10.0.tgz
+    version: 2.10.0
+  - apiVersion: v1
+    appVersion: v2.7.0
+    created: "2020-05-07T16:00:32.274858449+01:00"
     description: A Helm chart for fluentd-es
     digest: c4d630cd44273a8db085f92ffdeee759b4ae28444cb39efa506c9cf980688b9b
     name: fluentd-es
@@ -12,7 +21,7 @@ entries:
     version: 2.9.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2020-05-06T10:11:48.344759+01:00"
+    created: "2020-05-07T16:00:32.274355198+01:00"
     description: A Helm chart for fluentd-es
     digest: af95dc51b9fecae060b53e32303f3852bc31ae1011879a1d6c5414ffc8add2e2
     name: fluentd-es
@@ -21,7 +30,7 @@ entries:
     version: 2.8.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2020-05-06T10:11:48.34396+01:00"
+    created: "2020-05-07T16:00:32.27387111+01:00"
     description: A Helm chart for fluentd-es
     digest: dfee6c4784b26284aa59fbcb6ddb7bfd93b68058f497f47bda37a27c847e7e85
     name: fluentd-es
@@ -31,7 +40,7 @@ entries:
   helloworld:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-05-06T10:11:48.346422+01:00"
+    created: "2020-05-07T16:00:32.275159673+01:00"
     description: A Helm chart for Kubernetes
     digest: 853e2f6533039c6b0b0f09d7491991a4e0bb7a7fc8cd94dbbcb20c17ee8a33ea
     name: helloworld
@@ -40,7 +49,7 @@ entries:
     version: 0.1.0
   kuberos:
   - apiVersion: v1
-    created: "2020-05-06T10:11:48.347414+01:00"
+    created: "2020-05-07T16:00:32.275523517+01:00"
     description: cloud-platform kuberos
     digest: 456898e7ab790231c21f2be21d32a70ae2417d0fdda40b3452944ebcd76f9b34
     home: https://github.com/ministryofjustice/kuberos
@@ -51,7 +60,7 @@ entries:
   multi-container-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2020-05-06T10:11:48.349989+01:00"
+    created: "2020-05-07T16:00:32.277477078+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -66,7 +75,7 @@ entries:
   prometheus-ecr-exporter:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2020-05-06T10:11:48.350668+01:00"
+    created: "2020-05-07T16:00:32.277746195+01:00"
     description: A Helm chart for prometheus ecr-exporter
     digest: 226b98a84def8414ffcf167443e2b700d315f7304250c3c78547bf655599f1c8
     home: https://github.com/ministryofjustice/prometheus_ecr_exporter
@@ -84,7 +93,7 @@ entries:
   team-resources:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-05-06T10:11:48.351112+01:00"
+    created: "2020-05-07T16:00:32.278232496+01:00"
     description: A Helm chart for Kubernetes
     digest: 4e19c666e5d19ab0a2002d90384aa927f2074b83601787d6f5075b06e8e5f086
     name: team-resources
@@ -94,7 +103,7 @@ entries:
     version: 0.1.0
   vault:
   - apiVersion: v2
-    created: "2020-05-06T10:11:48.352991+01:00"
+    created: "2020-05-07T16:00:32.279792266+01:00"
     description: Install and configure Vault on Kubernetes.
     digest: ebab907af28cd2599b8a8215162862150a87975027d4053fd4c6af3eed8a9fd1
     home: https://www.vaultproject.io
@@ -107,4 +116,4 @@ entries:
     urls:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/vault-0.5.0.tgz
     version: 0.5.0
-generated: "2020-05-06T10:11:48.339902+01:00"
+generated: "2020-05-07T16:00:32.272761993+01:00"
