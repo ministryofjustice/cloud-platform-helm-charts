@@ -1,0 +1,39 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: upload-token-s3
+spec:
+  template:
+    spec:
+      serviceAccount: {{ include "upload-token-s3.serviceAccountName" . }}
+      containers:
+      - name: upload-token-s3
+        image: ministryofjustice/cloud-platform-tools
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.slack_token_bucket.credsSecret }}
+              key: access_key_id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.slack_token_bucket.credsSecret }}
+              key: secret_access_key
+        - name: ECR_REPO
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.slack_token.secretName }}
+              key: repo
+        - name: SLACK_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: {{ .Values.slack_token.secretName }}
+              key: token
+        command: ["/bin/sh"]
+        args: ["-c", "echo $SLACK_TOKEN | aws s3 cp - s3://{{ .Values.slack_token_bucket.name }}/$ECR_REPO"]
+        securityContext:
+          runAsUser: 1000
+      restartPolicy: Never
+  backoffLimit: 4
+
