@@ -1,0 +1,98 @@
+{{- if .Values.cronjobEnabled -}}
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: notify-snapshot-limit-exceeded
+spec:
+  schedule: {{.Values.cronjobSchedule | quote }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: default
+          containers:
+          - image: ministryofjustice/cloud-platform-tools:1.15
+            name: cloud-platform-tools
+            env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: aws-creds
+                  key: access-key-id
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aws-creds
+                  key: secret-access-key
+            - name: SLACK_HOOK_URL
+              valueFrom:
+                secretKeyRef:
+                  name: slack-hook-id
+                  key: value
+            - name: AWS_DEFAULT_REGION
+              value: "eu-west-2"
+            command: ["python3"]
+            args: ["opt/notify-slack.py"]
+            volumeMounts:
+            - name: config
+              mountPath: /opt/notify-slack.py
+              subPath: notify-slack.py
+            - name: config
+              mountPath: /opt/capture-snapshots-limits.sh
+              subPath: capture-snapshots-limits.sh
+          volumes:
+          - name: config
+            configMap:
+              defaultMode: 0755
+              name: rds-snapshot-job-cm
+          restartPolicy: Never
+      backoffLimit: 10  
+{{- else }}
+apiVersion: batch/v1
+kind: Job
+metadata: 
+  labels:
+    app: notify-snapshot-limit-exceeded
+  name: notify-snapshot-limit-exceeded
+spec:
+  template:
+    spec:
+      serviceAccountName: default
+      containers: 
+      - image: ministryofjustice/cloud-platform-tools:1.15
+        name: cloud-platform-tools
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: access-key-id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: aws-creds
+              key: secret-access-key
+        - name: SLACK_HOOK_URL
+          valueFrom:
+            secretKeyRef:
+              name: slack-hook-id
+              key: value
+        - name: AWS_DEFAULT_REGION
+          value: "eu-west-2"
+        command: ["python3"]
+        args: ["opt/notify-slack.py"]
+        volumeMounts:
+        - name: config
+          mountPath: /opt/notify-slack.py
+          subPath: notify-slack.py
+        - name: config
+          mountPath: /opt/capture-snapshots-limits.sh
+          subPath: capture-snapshots-limits.sh
+      volumes:
+      - name: config
+        configMap:
+          defaultMode: 0755
+          name: rds-snapshot-job-cm
+      restartPolicy: Never
+  backoffLimit: 10
+{{- end }}

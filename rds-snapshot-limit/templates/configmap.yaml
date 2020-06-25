@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: rds-snapshot-job-cm
+data:
+  notify-slack.py: |-
+      {{- .Files.Get "files/notify-slack.py" | nindent 4}}
+
+  capture-snapshots-limits.sh: |-
+      {{- .Files.Get "files/capture-snapshots-limits.sh" | nindent 4}}
+
