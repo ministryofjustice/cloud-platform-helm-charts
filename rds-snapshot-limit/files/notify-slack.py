@@ -17,7 +17,29 @@ def get_business_unit(rds_server):
 def slack_notification(business_unit,rds_server,actual_snapshot_count,expected_snapshot_limit):
 
     webhook_url = os.environ['SLACK_HOOK_URL']
-    slack_data = {'text': 'Team: '+business_unit+' | RDS Server: '+rds_server+' has exceeded its manual snapshot limit of '+str(expected_snapshot_limit)+ '. Actual number of manual snapshots is '+str(actual_snapshot_count)}
+   # slack_data = {'text': 'Team: '+business_unit+' | RDS Server: '+rds_server+' has exceeded its manual snapshot limit of '+str(expected_snapshot_limit)+ '. Actual number of manual snapshots is '+str(actual_snapshot_count)}
+    
+    
+    slack_data = {
+        "text": "RDS Instance: Manual snapshots exceeded limit",
+         "attachments": [
+            {
+            "fallback": "Plain-text summary of the attachment.",
+            "color": "#ECB22E",
+            "author_name": "RDS Intance Name: "+rds_server,
+            "author_link": "https://eu-west-2.console.aws.amazon.com/rds/home?region=eu-west-2#database:id="+rds_server+";is-cluster=false;tab=maintenance-and-backups",
+            "text": "Number of manual snapshots ("+str(actual_snapshot_count)+") exceeds the limit of ("+str(expected_snapshot_limit)+")",
+            "fields": [
+                {
+                    "title": "Priority",
+                    "value": "Medium"
+                }
+            ],
+            "footer": "Team: "+business_unit
+        }
+    ]
+}        
+    
     response = requests.post(webhook_url, data=json.dumps(slack_data),headers={'Content-Type': 'application/json'})
     if response.status_code != 200:
         raise ValueError(
