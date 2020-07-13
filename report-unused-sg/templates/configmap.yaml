@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: get-unused-sgs-cm
+data:
+  notify-slack.py: |-
+      {{- .Files.Get "files/unused-sgs.go" | nindent 4}}
+
