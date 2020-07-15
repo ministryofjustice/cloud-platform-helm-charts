@@ -21,7 +21,7 @@ type SlackRequestBody struct {
 
 func main() {
 	var awsRegion string
-	awsRegion = "eu-west-2"
+	awsRegion = os.Getenv("AWS_DEFAULT_REGION")
 	svc := ec2.New(session.New(&aws.Config{Region: aws.String(awsRegion)},))
 	var maxResults int64
 	maxResults = 500
@@ -29,9 +29,10 @@ func main() {
 	var sgSlice []string
 	var numOfUnusedSg string
 
+
 	sgSlice = append(sgSlice, "| SG GROUP ID          | SG GROUP NAME ")
 	
-	webhookUrl := "https://hooks.slack.com/services/T02DYEB3A/<TOKEN>"
+	webhookUrl := "https://hooks.slack.com/services/T02DYEB3A/"+os.Getenv("SLACK_HOOK_URL")
 	
 	for {
 		descSGInput := &ec2.DescribeSecurityGroupsInput{

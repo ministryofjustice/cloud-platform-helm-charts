@@ -3,6 +3,9 @@ kind: ConfigMap
 metadata:
   name: get-unused-sgs-cm
 data:
-  notify-slack.py: |-
+  unused-sgs.go: |-
       {{- .Files.Get "files/unused-sgs.go" | nindent 4}}
+
+  entrypoint.sh: |-
+    {{- .Files.Get "files/entrypoint.sh" | nindent 4}}
 

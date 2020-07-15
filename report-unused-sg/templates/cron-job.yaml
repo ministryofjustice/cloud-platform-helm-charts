@@ -55,8 +55,10 @@ spec:
   template:
     spec:
       serviceAccountName: default
+      securityContext:
+        runAsUser: 1000
       containers: 
-      - image:  ministryofjustice/cloud-platform-tools:1.18
+      - image: golang:latest
         name: cloud-platform-tools
         env:
         - name: AWS_ACCESS_KEY_ID
@@ -76,12 +78,17 @@ spec:
               key: value
         - name: AWS_DEFAULT_REGION
           value: "eu-west-2"
-        command: ["go run"]
-        args: ["opt/unused-sgs.go"]
+        command: ["/bin/sh"]
+        args:
+        - "-xe"
+        - /opt/entrypoint.sh
         volumeMounts:
         - name: config
           mountPath: /opt/unused-sgs.go
           subPath: unused-sgs.go
+        - name: config
+          mountPath: /opt/entrypoint.sh
+          subPath: entrypoint.sh
       volumes:
       - name: config
         configMap:
