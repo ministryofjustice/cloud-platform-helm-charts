@@ -10,7 +10,6 @@ import (
 	"os"
 	"log"
 	"github.com/aws/aws-sdk-go/service/s3/s3manager"
-	
 )
 
 func main() {
@@ -28,43 +27,17 @@ func main() {
 	vpcIdStr = fmt.Sprintf("%v", vpcId)
 	fmt.Println(vpcIdStr)
 
-	//DescribeNatGateway(vpcIdStr)
+	// Now that we have the VPC Id, we can use this to get the actual resources within this VPC using golang aws sdk.
+	// We can then compare the actual resources with those in the state file downloaded above.
+
+
+	// This function outputs NatGateway details using the golang sdk for aws. However more details outputted than required. 
+	// Would be good to have function that simply outputs a single value (i.e just the nat id) for a given vpc id specified. 
+	DescribeNatGateway(vpcIdStr)
 	
-	DescribeVPC(vpcIdStr)
 
-		
 }
 
-func DescribeVPC(vpcId string) {
-
-
-		svc := ec2.New(session.New(&aws.Config{
-		Region: aws.String("eu-west-2")},))
-
-		input := &ec2.DescribeVpcsInput{
-			VpcIds: []string{
-				"vpc-0c16457fd570a1f0b",
-			},
-		}
-		
-		req := svc.DescribeVpcsRequest(input)
-		result, err := req.Send(context.Background())
-		if err != nil {
-			if aerr, ok := err.(awserr.Error); ok {
-				switch aerr.Code() {
-				default:
-					fmt.Println(aerr.Error())
-				}
-			} else {
-				// Print the error, cast err to awserr.Error to get the Code and
-				// Message from an error.
-				fmt.Println(err.Error())
-			}
-			return
-		}
-		
-		fmt.Println(result)
-}
 
 func DescribeNatGateway(vpcId string) {
 
@@ -92,7 +65,7 @@ func DescribeNatGateway(vpcId string) {
 	descNatGateways = fmt.Sprintf("%v", result)
 	fmt.Println(descNatGateways)
 
-	//*********************
+	//Output the NatGateway description to a file so we can read.
 
 	f, err := os.Create("describeNatGateways.json")
     if err != nil {
@@ -112,9 +85,9 @@ func DescribeNatGateway(vpcId string) {
         return
     }
 	
-	//jq2 := gojsonq.New().File("describeNatGateways.json")
-	//natGatewayId := jq2.Find("NatGateways.NatGatewayId")
-	//fmt.Println(natGatewayId)
+	jq2 := gojsonq.New().File("describeNatGateways.json")
+	natGatewayId := jq2.Find("NatGateways.NatGatewayId")
+	fmt.Println(natGatewayId)
 
 }
 
