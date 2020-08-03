@@ -55,6 +55,7 @@ def route_table_associations_for_subnet(client, subnet_id)
   filters = [ { name: "association.subnet-id", values: [subnet_id] } ]
   data = client.describe_route_tables(filters: filters)
   puts data
+  puts data[:route_table_association_id]
 end
 
 
