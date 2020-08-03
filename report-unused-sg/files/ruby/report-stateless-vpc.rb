@@ -15,6 +15,7 @@ def list_vpc_from_s3_state_folder(s3)
   vpc_names.each { |item| puts item }
 end
 
+
 #binding.pry
 s3 = Aws::S3::Resource.new(region:'eu-west-1', profile: ENV["AWS_PROFILE"])
 
