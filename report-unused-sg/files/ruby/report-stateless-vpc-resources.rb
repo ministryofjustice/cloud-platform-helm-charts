@@ -70,7 +70,7 @@ ec2 = Aws::EC2::Client.new(region:'eu-west-2', profile: ENV["AWS_PROFILE"])
 
 #*********Get the subnets*******************
 
-pp subnets_ids_for_vpc(ec2, "vpc-0922049e634e2dc7b")
+pp subnets_ids_for_vpc(ec2, "vpc-0c16457fd570a1f0b")
 
 #pp route_tables_for_vpc(ec2, "subnet-05457126ff452defb")
 
