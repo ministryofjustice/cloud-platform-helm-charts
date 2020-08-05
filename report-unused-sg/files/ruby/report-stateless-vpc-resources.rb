@@ -57,23 +57,21 @@ def route_tables_for_subnet(client, subnet_id)
 end
 
 
-def get_state_vpc_names()
+def get_state_vpc_names(s3)
 
-  vpc_state_names = [] 
+  s3_state_bucket_keys = s3.bucket("cloud-platform-terraform-state").objects(prefix:'cloud-platform-network', delimiter: '').collect(&:"key")
+
+  keys = []
+  vpc_names = []
+  s3_state_bucket_keys.each { |vpc_name| keys << vpc_name.delete(' ') }
   
-  # Create a file containing the workspace list (vpc names)
-  puts `terraform init`
-  File.open("vpc_state_names.txt","w") do |f|
-    f.puts `terraform workspace list`
+  
+  keys.each do |key|
+    key_split = key.split('/')
+    vpc_names.push(key_split[1])
   end
 
-  # Populate the vpc array with the vpc names from the file 
-  File.open('vpc_state_names.txt').each { |vpc| vpc_state_names << vpc.delete(' ') }
-
-  # Remove the first element as this is the default vpc
-  vpc_state_names.shift(1)
-
-  return vpc_state_names
+  return vpc_names
 
 end 
 
@@ -86,31 +84,50 @@ def get_vpc_ids_from_aws(client)
   data = client.describe_vpcs()
 
   # Create a file containing the vpc ids only
-  File.open("vpc_actual_ids.txt","w") do |f|
+  File.open("output-files/vpc_actual_ids.txt","w") do |f|
     f.puts data.vpcs.map { |vpc| vpc.vpc_id }.sort
   end
 
-  File.open('vpc_actual_ids.txt').each { |vpc| vpc_actual_ids << vpc }
+  File.open('output-files/vpc_actual_ids.txt').each { |vpc| vpc_actual_ids << vpc }
 
   #vpc_actual_ids.shift(1)
-
   return vpc_actual_ids
 
 end 
 
-def get_vpc_ids_from_state(statefile)
-  str = File.read(statefile)
-  data = JSON.parse(str)
-  vpc_id = data['outputs']['vpc_id']['value']
-  return vpc_id
+# The s3 key for the network state contains the vpc name. We therefore need to dynamically fetch each name in the state
+# and iterate through them to get the corresponding vpc id. The state file can then be downloaded for each vpc and finally getting vpc id
+def get_vpc_ids_from_state(s3)
+
+  vpc_ids_in_state = []
+  
+  #Iterate the vpc names in the state and get the corresponding vpc ids
+  get_state_vpc_names(s3).each do |vpc_name|
+    begin
+      bucket_name = "cloud-platform-terraform-state"
+      key = "cloud-platform-network/"+vpc_name+"/terraform.tfstate"
+      statefile_name_output = "state-files/vpc-network-"+vpc_name+".tfstate"
+      
+      download_state_from_s3(s3, bucket_name, key, statefile_name_output)
+    
+      str = File.read(statefile_name_output)
+      data = JSON.parse(str)
+      vpc_id = data['outputs']['vpc_id']['value']
+      vpc_ids_in_state.push(vpc_id)
+    rescue => e
+      #puts vpc_name+' has no vpc id in its state file'
+    end
+  end
+
+  return vpc_ids_in_state
+
 end
 
 
-def download_network_state(s3)
-
-  # Download the network state file from s3 for a given vpc name 
-  obj = s3.bucket('cloud-platform-terraform-state').object('cloud-platform-network/iawan-test/terraform.tfstate')
-  obj.get(response_target: 'state.tfstate')
+def download_state_from_s3(s3, bucket_name, key, statefile_path)
+  # Loop through all the dynamically fetched vpc names and download the network state file from s3
+  obj = s3.bucket(bucket_name).object(key)
+  obj.get(response_target: statefile_path)
 end
 
 s3 = Aws::S3::Resource.new(region:'eu-west-1', profile: ENV["AWS_PROFILE"])
@@ -119,21 +136,47 @@ s3 = Aws::S3::Resource.new(region:'eu-west-1', profile: ENV["AWS_PROFILE"])
 ec2 = Aws::EC2::Client.new(region:'eu-west-2', profile: ENV["AWS_PROFILE"])
 
 
-download_network_state(s3)
 
-pp get_vpc_ids_from_state('state.tfstate')
+#pp get_vpc_ids_from_state(statefile_name_output)
 
 
-#Get the VPC names in the state
-#vpc_names_in_state = get_state_vpc_names()
-#vpc_names_in_state.each do |vpc_name|
-#  puts vpc_name
-#end
+#Get the actual vpc ids
+#vpc_ids_aws = get_vpc_ids_from_aws(ec2)
 
-#Get the actual VPC ids
-vpc_ids_aws = get_vpc_ids_from_aws(ec2)
-vpc_ids_aws.each do |vpc_id|
+vpc_ids_from_aws = get_vpc_ids_from_aws(ec2)
+vpc_ids_from_state = get_vpc_ids_from_state(s3)
+
+puts 'vpc ids from AWS'
+vpc_ids_from_aws.each do |vpc_id|
   puts vpc_id
+end
+
+#Get the state vpc ids
+puts 'vpc ids from state files'
+
+vpc_ids_from_state.each do |vpc_id|
+  puts vpc_id
+end
+
+
+
+
+
+vpc_ids_with_state = []
+
+vpc_ids_from_state.each do |vpc_id_state|
+  vpc_ids_from_aws.each do |vpc_id_aws|
+      if vpc_id_state.delete(' ') == vpc_id_aws.delete(' ')
+          vpc_ids_with_state.push(vpc_id_state)
+      end
+     # break vpc_id_aws if vpc_id_state == vpc_id_aws
+  end
+end
+
+puts 'STATELESS'
+
+vpc_ids_with_state.each do |vpc_id_with_state|
+  puts vpc_id_with_state
 end
 
 

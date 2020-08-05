@@ -1,0 +1,4 @@
+.terraform
+report-unused-sg/files/ruby/state-files/*
+report-unused-sg/files/ruby/output-files/*
+report-unused-sg/files/ruby/Gemfile.lock
