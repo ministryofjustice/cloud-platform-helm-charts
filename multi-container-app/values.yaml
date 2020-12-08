@@ -20,7 +20,7 @@ ingress:
   #       - <DNS-PREFIX>.apps.live-1.cloud-platform.service.justice.gov.uk
     
 postgresql:
-  enabled: false
+  enabled: true
   existingSecret: container-postgres-secrets
   postgresqlDatabase: multi_container_demo_app
   persistence:
