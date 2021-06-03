@@ -5,8 +5,8 @@
 replicaCount: 2
 
 image:
-  repository: negz/kuberos
-  tag: 7bc1e72
+  repository: ministryofjustice/cloud-platform-kuberos
+  tag: 1.0
   pullPolicy: IfNotPresent
 
 nameOverride: ""
