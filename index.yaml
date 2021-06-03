@@ -3,7 +3,7 @@ entries:
   eventrouter:
   - apiVersion: v1
     appVersion: "0.3"
-    created: "2021-06-03T11:46:22.015411+01:00"
+    created: "2021-06-03T13:02:34.549392+01:00"
     description: A Helm chart for eventruter (formally https://github.com/heptiolabs/eventrouter)
     digest: 967203a1879e9e664b9ebf9bf4c2675ba35c082d84586abc12b163486cd2926c
     home: https://github.com/heptiolabs/eventrouter
@@ -18,7 +18,7 @@ entries:
   fluentd-es:
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2021-06-03T11:46:22.016108+01:00"
+    created: "2021-06-03T13:02:34.550126+01:00"
     description: A Helm chart for fluentd-es
     digest: f92169eee79041b5240e36a3c18e531a416de3e3036dc22f4de3c9e96d1bc099
     name: fluentd-es
@@ -27,7 +27,7 @@ entries:
     version: 2.10.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2021-06-03T11:46:22.01866+01:00"
+    created: "2021-06-03T13:02:34.552692+01:00"
     description: A Helm chart for fluentd-es
     digest: c4d630cd44273a8db085f92ffdeee759b4ae28444cb39efa506c9cf980688b9b
     name: fluentd-es
@@ -36,7 +36,7 @@ entries:
     version: 2.9.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2021-06-03T11:46:22.017835+01:00"
+    created: "2021-06-03T13:02:34.551939+01:00"
     description: A Helm chart for fluentd-es
     digest: af95dc51b9fecae060b53e32303f3852bc31ae1011879a1d6c5414ffc8add2e2
     name: fluentd-es
@@ -45,7 +45,7 @@ entries:
     version: 2.8.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2021-06-03T11:46:22.017025+01:00"
+    created: "2021-06-03T13:02:34.551187+01:00"
     description: A Helm chart for fluentd-es
     digest: dfee6c4784b26284aa59fbcb6ddb7bfd93b68058f497f47bda37a27c847e7e85
     name: fluentd-es
@@ -55,7 +55,7 @@ entries:
   helloworld:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.019628+01:00"
+    created: "2021-06-03T13:02:34.554731+01:00"
     description: A Helm chart for Kubernetes
     digest: 7fa87b1ce632a8f458bbb48155e7821d55c13fbd4d6af004a0cd0ebdec565e26
     name: helloworld
@@ -64,7 +64,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.019175+01:00"
+    created: "2021-06-03T13:02:34.553292+01:00"
     description: A Helm chart for Kubernetes
     digest: 853e2f6533039c6b0b0f09d7491991a4e0bb7a7fc8cd94dbbcb20c17ee8a33ea
     name: helloworld
@@ -73,7 +73,16 @@ entries:
     version: 0.1.0
   kuberos:
   - apiVersion: v1
-    created: "2021-06-03T11:46:22.02198+01:00"
+    created: "2021-06-03T13:02:34.556859+01:00"
+    description: cloud-platform kuberos
+    digest: 52f2c98fce71aa0264bca7318432903da075807878a5f1e1768efdaed532b3d4
+    home: https://github.com/ministryofjustice/cloud-platform-kuberos
+    name: kuberos
+    urls:
+    - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.1.tgz
+    version: 0.3.1
+  - apiVersion: v1
+    created: "2021-06-03T13:02:34.556353+01:00"
     description: cloud-platform kuberos
     digest: d41d8689227464c2517a8dfd05b1438fba15e3aa04db5e5e6549e530b6c4ded5
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -82,7 +91,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
-    created: "2021-06-03T11:46:22.021442+01:00"
+    created: "2021-06-03T13:02:34.555824+01:00"
     description: cloud-platform kuberos
     digest: 6c7b3267656f7a0de2b065d84062cec1318b61d077b68a12eefdc1f29cb613b2
     home: https://github.com/ministryofjustice/kuberos
@@ -91,7 +100,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: "2021-06-03T11:46:22.020493+01:00"
+    created: "2021-06-03T13:02:34.555279+01:00"
     description: cloud-platform kuberos
     digest: 456898e7ab790231c21f2be21d32a70ae2417d0fdda40b3452944ebcd76f9b34
     home: https://github.com/ministryofjustice/kuberos
@@ -102,7 +111,7 @@ entries:
   multi-container-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.037896+01:00"
+    created: "2021-06-03T13:02:34.57282+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -116,7 +125,7 @@ entries:
     version: 0.3.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.034195+01:00"
+    created: "2021-06-03T13:02:34.569327+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -130,7 +139,7 @@ entries:
     version: 0.3.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.030908+01:00"
+    created: "2021-06-03T13:02:34.566587+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -144,7 +153,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.026683+01:00"
+    created: "2021-06-03T13:02:34.561609+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -158,7 +167,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2021-06-03T11:46:22.024286+01:00"
+    created: "2021-06-03T13:02:34.559226+01:00"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -173,7 +182,7 @@ entries:
   prometheus-ecr-exporter:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2021-06-03T11:46:22.038678+01:00"
+    created: "2021-06-03T13:02:34.573622+01:00"
     description: A Helm chart for prometheus ecr-exporter
     digest: c1dadb21c4865ecfa44038b9b5f3203cfa6fde557f57f8083302824b1f7cfb75
     home: https://github.com/ministryofjustice/prometheus_ecr_exporter
@@ -190,7 +199,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2021-06-03T11:46:22.038287+01:00"
+    created: "2021-06-03T13:02:34.573214+01:00"
     description: A Helm chart for prometheus ecr-exporter
     digest: 226b98a84def8414ffcf167443e2b700d315f7304250c3c78547bf655599f1c8
     home: https://github.com/ministryofjustice/prometheus_ecr_exporter
@@ -208,7 +217,7 @@ entries:
   team-resources:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2021-06-03T11:46:22.039052+01:00"
+    created: "2021-06-03T13:02:34.574004+01:00"
     description: A Helm chart for Kubernetes
     digest: 4e19c666e5d19ab0a2002d90384aa927f2074b83601787d6f5075b06e8e5f086
     name: team-resources
@@ -218,7 +227,7 @@ entries:
     version: 0.1.0
   vault:
   - apiVersion: v2
-    created: "2021-06-03T11:46:22.040554+01:00"
+    created: "2021-06-03T13:02:34.575478+01:00"
     description: Install and configure Vault on Kubernetes.
     digest: ebab907af28cd2599b8a8215162862150a87975027d4053fd4c6af3eed8a9fd1
     home: https://www.vaultproject.io
@@ -231,4 +240,4 @@ entries:
     urls:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/vault-0.5.0.tgz
     version: 0.5.0
-generated: "2021-06-03T11:46:22.014788+01:00"
+generated: "2021-06-03T13:02:34.548721+01:00"
