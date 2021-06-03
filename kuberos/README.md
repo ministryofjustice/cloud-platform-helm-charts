@@ -1,6 +1,6 @@
 # cloud-platform kuberos
 
-This chart deploys [`kuberos`](https://github.com/ministryofjustice/kuberos) on a cloud-platform cluster.
+This chart deploys [`cloud-platform-kuberos`](https://github.com/ministryofjustice/cloud-platform-kuberos) on a cloud-platform cluster.
 
 ## Configuration
 
