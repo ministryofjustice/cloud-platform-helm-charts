@@ -6,7 +6,7 @@ replicaCount: 2
 
 image:
   repository: ministryofjustice/cloud-platform-kuberos
-  tag: "1.2"
+  tag: "2.0"
   pullPolicy: IfNotPresent
 
 nameOverride: ""
@@ -27,8 +27,8 @@ ingress:
 
 resources:
   limits:
-    cpu: 1m
-    memory: 32Mi
+    cpu: 10m
+    memory: 200Mi
   requests:
     cpu: 1m
     memory: 32Mi
