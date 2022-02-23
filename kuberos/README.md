@@ -10,7 +10,7 @@ The following table lists the configurable parameters of the kuberos chart and t
 | - | - | - |
 | fullnameOverride | Override the full name of the deployment | `""` |
 | replicaCount | The number of replicas in the kuberos `Deployment` | `1` |
-| image.repository | Docker image repository for the `kuberos` image | `926803513772.dkr.ecr.eu-west-1.amazonaws.com/cloud-platform/kuberos` |
+| image.repository | Docker image repository for the `kuberos` image | `ministryofjustice/cloud-platform-kuberos` |
 | image.tag | Docker image tag | `latest` |
 | image.pullPolicy | The container's `imagePullPolicy` | `IfNotPresent` |
 | service.type | Kuberos `Service` type | `ClusterIP` |
