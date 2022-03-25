@@ -1,5 +1,5 @@
 {{- if .Values.ingress.enabled -}}
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: multi-container-app
@@ -20,8 +20,11 @@ spec:
       http:
         paths:
           - path: /
+            pathType: ImplementationSpecific
             backend:
-              serviceName: rails-app-service
-              servicePort: 3000
+              service:
+                name: rubyapp-service
+                port:
+                  number: 4567
   {{- end }}
 {{- end }}
