@@ -17,19 +17,22 @@ $ helm repo add cloud-platform https://ministryofjustice.github.io/cloud-platfor
 Keep in mind two things:
 
 1) Source code of helm charts are inside the *master* branch, 
-2) Artifacts inside *gh-pages* branch. The artifacts used by helm are tarballs (`tgz`) and they are built using `helm package` command
+2) Artifacts inside *gh-pages* branch which are the ones publicly distributed and available in url [https://ministryofjustice.github.io/cloud-platform-helm-charts](https://ministryofjustice.github.io/cloud-platform-helm-charts)
 
-If we want to include a new helm chart in this repo we should add its source code into the master branch followed by the artifacts into *gh-pages* branch. 
+If you want to include a new helm chart of amend existing helm chart to create new artifacts(with latest chart version) and publish the artifacts follow the below steps
 
-Last step is to regenerate the index (`index.yaml`), which is the file indexed when we do `helm repo update`.
+- Build the artifacts tarballs(`tgz`) using the below command
+`helm package <chart-name>`
 
-## Regenerating the `index.yaml`
-
-Regenerate `index.yaml`
+- Regenerate `index.yaml`
 
 ```console
 helm repo index --url  https://ministryofjustice.github.io/cloud-platform-helm-charts/ --merge index.yaml .
 ```
+
+- Raise a PR with all the changes
+
+Once the PR is merged to *main* branch, the github action `sync-branches.yml`  will push the artifacts into *gh-pages* branch. The regenerated index (`index.html`) can then used to upgrade the chart by doing `helm repo update`
 
 ## More documentation
 
