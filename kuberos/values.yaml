@@ -6,7 +6,7 @@ replicaCount: 2
 
 image:
   repository: ministryofjustice/cloud-platform-kuberos
-  tag: "2.1"
+  tag: "2.2"
   pullPolicy: IfNotPresent
 
 nameOverride: ""
