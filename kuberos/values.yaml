@@ -17,8 +17,9 @@ service:
   port: 80
 
 ingress:
-  annotations:
-    kubernetes.io/ingress.class: "nginx"
+  annotations: {}
+  # It can be default(default ingress-controller) or modsec(ingress-controller has the modsec WAF enabled)  
+  className: ""
   host: kuberos.cluster.local
   tls:
     - secretName: kuberos-tls

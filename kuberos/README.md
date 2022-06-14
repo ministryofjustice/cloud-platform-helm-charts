@@ -16,7 +16,7 @@ The following table lists the configurable parameters of the kuberos chart and t
 | service.type | Kuberos `Service` type | `ClusterIP` |
 | service.port | Kuberos `Service` port | `80` |
 | ingress.host | Kuberos `Ingress` hostname | `kuberos.cluster.local` |
-| ingress.annotations | Kuberos `Ingress` annotations | `{kubernetes.io/ingress.class: "nginx"}` |
+| ingress.className | Kuberos `Ingress` className | `""` |
 | oidc.issuerUrl | OIDC Issuer URL | `""` |
 | oidc.clientId | OIDC Client ID | `""` |
 | oidc.clientSecret | OIDC Client Secret | `""` |
