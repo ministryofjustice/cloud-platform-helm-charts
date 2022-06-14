@@ -16,7 +16,7 @@ $ helm repo add cloud-platform https://ministryofjustice.github.io/cloud-platfor
 
 Keep in mind two things:
 
-1) Source code of helm charts are inside the *master* branch, 
+1) Source code of helm charts are inside the *main* branch, 
 2) Artifacts inside *gh-pages* branch which are the ones publicly distributed and available in url [https://ministryofjustice.github.io/cloud-platform-helm-charts](https://ministryofjustice.github.io/cloud-platform-helm-charts)
 
 If you want to include a new helm chart of amend existing helm chart to create new artifacts(with latest chart version) and publish the artifacts follow the below steps

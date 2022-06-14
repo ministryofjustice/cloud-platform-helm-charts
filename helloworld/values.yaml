@@ -20,7 +20,7 @@ service:
 ingress:
   enabled: true
   annotations: {}
-    # kubernetes.io/tls-acme: "true"
+  # It can be default(default ingress-controller) or modsec(ingress-controller has the modsec WAF enabled)
   className: ""
   hosts:
     - host: <DNS-PREFIX>.apps.<cluster-name>.cloud-platform.service.justice.gov.uk
