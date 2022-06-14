@@ -9,6 +9,8 @@ ingress:
   enabled: true
   annotations:
     kubernetes.io/tls-acme: "true"
+  # It can be default(default ingress-controller) or modsec(ingress-controller has the modsec WAF enabled)
+  className: ""
   hosts:
     - host: mcda-starter-pack-2.apps.cp-0104-1339.cloud-platform.service.justice.gov.uk
       paths: []

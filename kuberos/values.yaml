@@ -18,7 +18,8 @@ service:
 
 ingress:
   annotations: {}
-    # kubernetes.io/tls-acme: "true"
+  # It can be default(default ingress-controller) or modsec(ingress-controller has the modsec WAF enabled)  
+  className: ""
   host: kuberos.cluster.local
   tls:
     - secretName: kuberos-tls

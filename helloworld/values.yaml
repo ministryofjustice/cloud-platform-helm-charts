@@ -21,6 +21,7 @@ ingress:
   enabled: true
   annotations: {}
     # kubernetes.io/tls-acme: "true"
+  className: ""
   hosts:
     - host: <DNS-PREFIX>.apps.<cluster-name>.cloud-platform.service.justice.gov.uk
       paths: /
