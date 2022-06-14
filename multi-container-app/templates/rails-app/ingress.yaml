@@ -24,8 +24,8 @@ spec:
             pathType: ImplementationSpecific
             backend:
               service:
-                name: rubyapp-service
+                name: rails-app-service
                 port:
-                  number: 4567
+                  number: 3000
   {{- end }}
 {{- end }}
