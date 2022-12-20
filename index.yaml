@@ -3,7 +3,7 @@ entries:
   eventrouter:
   - apiVersion: v1
     appVersion: "0.3"
-    created: "2022-12-20T11:49:29.167173Z"
+    created: "2022-12-20T11:50:25.144887Z"
     description: A Helm chart for eventruter (formally https://github.com/heptiolabs/eventrouter)
     digest: f0e32869489709190c7fe46f0f8c6390c555ef1fcb140bc2035a0a7c9233aeda
     home: https://github.com/heptiolabs/eventrouter
@@ -17,7 +17,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: "0.3"
-    created: "2022-12-20T11:49:29.166811Z"
+    created: "2022-12-20T11:50:25.144161Z"
     description: A Helm chart for eventruter (formally https://github.com/heptiolabs/eventrouter)
     digest: 967203a1879e9e664b9ebf9bf4c2675ba35c082d84586abc12b163486cd2926c
     home: https://github.com/heptiolabs/eventrouter
@@ -32,7 +32,7 @@ entries:
   fluentd-es:
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2022-12-20T11:49:29.168108Z"
+    created: "2022-12-20T11:50:25.145746Z"
     description: A Helm chart for fluentd-es
     digest: f92169eee79041b5240e36a3c18e531a416de3e3036dc22f4de3c9e96d1bc099
     name: fluentd-es
@@ -41,7 +41,7 @@ entries:
     version: 2.10.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2022-12-20T11:49:29.17044Z"
+    created: "2022-12-20T11:50:25.148402Z"
     description: A Helm chart for fluentd-es
     digest: c4d630cd44273a8db085f92ffdeee759b4ae28444cb39efa506c9cf980688b9b
     name: fluentd-es
@@ -50,7 +50,7 @@ entries:
     version: 2.9.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2022-12-20T11:49:29.16979Z"
+    created: "2022-12-20T11:50:25.147491Z"
     description: A Helm chart for fluentd-es
     digest: af95dc51b9fecae060b53e32303f3852bc31ae1011879a1d6c5414ffc8add2e2
     name: fluentd-es
@@ -59,7 +59,7 @@ entries:
     version: 2.8.0
   - apiVersion: v1
     appVersion: v2.7.0
-    created: "2022-12-20T11:49:29.168799Z"
+    created: "2022-12-20T11:50:25.146592Z"
     description: A Helm chart for fluentd-es
     digest: dfee6c4784b26284aa59fbcb6ddb7bfd93b68058f497f47bda37a27c847e7e85
     name: fluentd-es
@@ -69,7 +69,7 @@ entries:
   helloworld:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.172562Z"
+    created: "2022-12-20T11:50:25.152185Z"
     description: A Helm chart for Kubernetes
     digest: cce144ef7cc8e2966bce7fe1d10918abe0a536438a8843eeabe917f039ddd092
     name: helloworld
@@ -78,7 +78,7 @@ entries:
     version: 0.2.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.171995Z"
+    created: "2022-12-20T11:50:25.1518Z"
     description: A Helm chart for Kubernetes
     digest: 8a88bd553010677f0c4aa7d4818183102c476d90d0a922ffbf142a370b4a7d3e
     name: helloworld
@@ -87,7 +87,7 @@ entries:
     version: 0.2.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.171618Z"
+    created: "2022-12-20T11:50:25.151296Z"
     description: A Helm chart for Kubernetes
     digest: b8c1f36d272d46d58c140faec30120b8ac3914adfeab563acbc78b9b002fde05
     name: helloworld
@@ -96,7 +96,7 @@ entries:
     version: 0.2.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.171241Z"
+    created: "2022-12-20T11:50:25.149458Z"
     description: A Helm chart for Kubernetes
     digest: 7fa87b1ce632a8f458bbb48155e7821d55c13fbd4d6af004a0cd0ebdec565e26
     name: helloworld
@@ -105,7 +105,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.170871Z"
+    created: "2022-12-20T11:50:25.148918Z"
     description: A Helm chart for Kubernetes
     digest: 853e2f6533039c6b0b0f09d7491991a4e0bb7a7fc8cd94dbbcb20c17ee8a33ea
     name: helloworld
@@ -114,7 +114,16 @@ entries:
     version: 0.1.0
   kuberos:
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.180957Z"
+    created: "2022-12-20T11:50:25.15829Z"
+    description: cloud-platform kuberos
+    digest: e96f7b0f82d72abc2531196486809f00346e7d5f06ea2fea79e8f7c25e4e12b7
+    home: https://github.com/ministryofjustice/cloud-platform-kuberos
+    name: kuberos
+    urls:
+    - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.9.tgz
+    version: 0.3.9
+  - apiVersion: v1
+    created: "2022-12-20T11:50:25.157907Z"
     description: cloud-platform kuberos
     digest: b8babf95f6f53beec7dd988a9f6afa6fe2311dc98d8d090051988acb0744a948
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -123,7 +132,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.8.tgz
     version: 0.3.8
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.18055Z"
+    created: "2022-12-20T11:50:25.157408Z"
     description: cloud-platform kuberos
     digest: 18d337fca3902641292f7f03608a416b909d55b8085a964a7669bcc8ff84d3a5
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -132,7 +141,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.7.tgz
     version: 0.3.7
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.180157Z"
+    created: "2022-12-20T11:50:25.156784Z"
     description: cloud-platform kuberos
     digest: 800c94b14979f866aa78424ab9851c9b220a5473a5a1310bf9c52fbde90fbce0
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -141,7 +150,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.6.tgz
     version: 0.3.6
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.179762Z"
+    created: "2022-12-20T11:50:25.156304Z"
     description: cloud-platform kuberos
     digest: 7ac2e5231c0d706fd96fb241142c7cf53d02b5e68e00898bc0d01efd92d6ae45
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -150,7 +159,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.5.tgz
     version: 0.3.5
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.179295Z"
+    created: "2022-12-20T11:50:25.155835Z"
     description: cloud-platform kuberos
     digest: cd2e0911ff7c7d3081f09a9a16165e8d5c3e5af8afced058382a29dcc33b8778
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -159,7 +168,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.4.tgz
     version: 0.3.4
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.178874Z"
+    created: "2022-12-20T11:50:25.155344Z"
     description: cloud-platform kuberos
     digest: 2f3b8b39ab1e9ed5f650277256f5ccd98ffbfed0e052664f404d78737b83def7
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -168,7 +177,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.3.tgz
     version: 0.3.3
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.178441Z"
+    created: "2022-12-20T11:50:25.154851Z"
     description: cloud-platform kuberos
     digest: bb372aca0baa558df8dbf5213233307ea3a9e7ea2e81537b2fea29a0f2295525
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -177,7 +186,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.2.tgz
     version: 0.3.2
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.178017Z"
+    created: "2022-12-20T11:50:25.154351Z"
     description: cloud-platform kuberos
     digest: 52f2c98fce71aa0264bca7318432903da075807878a5f1e1768efdaed532b3d4
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -186,7 +195,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.1.tgz
     version: 0.3.1
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.177581Z"
+    created: "2022-12-20T11:50:25.153849Z"
     description: cloud-platform kuberos
     digest: d41d8689227464c2517a8dfd05b1438fba15e3aa04db5e5e6549e530b6c4ded5
     home: https://github.com/ministryofjustice/cloud-platform-kuberos
@@ -195,7 +204,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.3.0.tgz
     version: 0.3.0
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.176958Z"
+    created: "2022-12-20T11:50:25.153294Z"
     description: cloud-platform kuberos
     digest: 6c7b3267656f7a0de2b065d84062cec1318b61d077b68a12eefdc1f29cb613b2
     home: https://github.com/ministryofjustice/kuberos
@@ -204,7 +213,7 @@ entries:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/kuberos-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: "2022-12-20T11:49:29.176349Z"
+    created: "2022-12-20T11:50:25.152788Z"
     description: cloud-platform kuberos
     digest: 456898e7ab790231c21f2be21d32a70ae2417d0fdda40b3452944ebcd76f9b34
     home: https://github.com/ministryofjustice/kuberos
@@ -215,7 +224,7 @@ entries:
   multi-container-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.201489Z"
+    created: "2022-12-20T11:50:25.182766Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -229,7 +238,7 @@ entries:
     version: 0.3.5
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.198825Z"
+    created: "2022-12-20T11:50:25.179849Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -243,7 +252,7 @@ entries:
     version: 0.3.4
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.196425Z"
+    created: "2022-12-20T11:50:25.177004Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -257,7 +266,7 @@ entries:
     version: 0.3.3
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.193199Z"
+    created: "2022-12-20T11:50:25.172255Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -271,7 +280,7 @@ entries:
     version: 0.3.2
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.190494Z"
+    created: "2022-12-20T11:50:25.169314Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -285,7 +294,7 @@ entries:
     version: 0.3.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.18878Z"
+    created: "2022-12-20T11:50:25.167258Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -299,7 +308,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.186172Z"
+    created: "2022-12-20T11:50:25.162741Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -313,7 +322,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2022-12-20T11:49:29.183522Z"
+    created: "2022-12-20T11:50:25.160458Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -328,7 +337,7 @@ entries:
   prometheus-ecr-exporter:
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2022-12-20T11:49:29.202535Z"
+    created: "2022-12-20T11:50:25.18423Z"
     description: A Helm chart for prometheus ecr-exporter
     digest: c1dadb21c4865ecfa44038b9b5f3203cfa6fde557f57f8083302824b1f7cfb75
     home: https://github.com/ministryofjustice/prometheus_ecr_exporter
@@ -345,7 +354,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 0.1.0
-    created: "2022-12-20T11:49:29.202033Z"
+    created: "2022-12-20T11:50:25.183613Z"
     description: A Helm chart for prometheus ecr-exporter
     digest: 226b98a84def8414ffcf167443e2b700d315f7304250c3c78547bf655599f1c8
     home: https://github.com/ministryofjustice/prometheus_ecr_exporter
@@ -363,7 +372,7 @@ entries:
   team-resources:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2022-12-20T11:49:29.202881Z"
+    created: "2022-12-20T11:50:25.184633Z"
     description: A Helm chart for Kubernetes
     digest: 4e19c666e5d19ab0a2002d90384aa927f2074b83601787d6f5075b06e8e5f086
     name: team-resources
@@ -371,4 +380,4 @@ entries:
     urls:
     - https://ministryofjustice.github.io/cloud-platform-helm-charts/team-resources-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-20T11:49:29.165889Z"
+generated: "2022-12-20T11:50:25.143204Z"
