@@ -9,6 +9,9 @@ image:
   tag: 0.2.0
   pullPolicy: IfNotPresent
 
+serviceAccount:
+  name: ""
+
 nameOverride: ""
 fullnameOverride: ""
 
