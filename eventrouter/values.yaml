@@ -33,7 +33,9 @@ podAnnotations: {}
 
 containerPorts: []
 
-securityContext: {}
-  # runAsUser: 1000
+securityContext:
+  capabilities:
+    drop:
+      - NET_RAW
 
 enablePrometheus: true
