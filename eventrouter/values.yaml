@@ -12,6 +12,11 @@ resources: {}
   #  cpu: 100m
   #  memory: 128Mi
 
+containerSecurityContext:
+  capabilities:
+    drop:
+    - NET_RAW
+
 serviceAccount:
   # Specifies whether a ServiceAccount should be created
   create: true
