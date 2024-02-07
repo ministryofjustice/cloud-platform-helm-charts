@@ -56,3 +56,4 @@ oidc:
 cluster:
   name: "<test>.cloud-platform.service.justice.gov.uk"
   address: "<cluster-address>"
+  ca: ""
