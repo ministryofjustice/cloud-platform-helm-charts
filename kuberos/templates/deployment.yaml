@@ -51,6 +51,13 @@ spec:
             initialDelaySeconds: 30
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsNonRoot: false
+            seccompProfile:
+              type: RuntimeDefault
+            capabilities:
+              drop: [ "ALL" ]
     {{- with .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml . | indent 8 }}
