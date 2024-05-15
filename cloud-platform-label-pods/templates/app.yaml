@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  namespace: cloud-platform-label-pods
+  labels:
+    name: api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: api
+  template:
+    metadata:
+      labels:
+        name: api
+    spec:
+      containers:
+        - name: api
+          image: '{{ .Values.ecrUrl }}:{{ .Values.imageTag }}'
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+              httpGet:
+                scheme: HTTPS
+                path: /healthz
+                port: 3000
+              initialDelaySeconds: 2
+          volumeMounts:
+          - name: ssl-certs
+            mountPath: /app/certs/
+            readOnly: false
+          env:
+            - name: GIN_MODE
+              value: "release"
+      volumes:
+        - name: ssl-certs
+          secret:
+            secretName: webhook-server-cert 
+                    
