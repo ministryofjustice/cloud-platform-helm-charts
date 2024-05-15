@@ -15,6 +15,15 @@ spec:
       labels:
         name: api
     spec:
+      securityContext:
+          allowPrivilegeEscalation: false
+          capabilities:
+              drop:
+                - ALL
+          runAsNonRoot: true
+          seccompProfile: "RuntimeDefault"
+          runAsUser: 1000
+          fsGroup: 1000
       containers:
         - name: api
           image: '{{ .Values.ecrUrl }}:{{ .Values.imageTag }}'
