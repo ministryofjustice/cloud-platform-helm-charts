@@ -16,10 +16,6 @@ spec:
         name: api
     spec:
       securityContext:
-          allowPrivilegeEscalation: false
-          capabilities:
-              drop:
-                - ALL
           runAsNonRoot: true
           seccompProfile:
             type: "RuntimeDefault"
@@ -27,6 +23,11 @@ spec:
           fsGroup: 1000
       containers:
         - name: api
+          securityContext:
+              allowPrivilegeEscalation: false
+              capabilities:
+                  drop:
+                    - ALL
           image: '{{ .Values.ecrUrl }}:{{ .Values.imageTag }}'
           imagePullPolicy: IfNotPresent
           ports:
