@@ -10,4 +10,4 @@ This service will be deployed to the `cloud-platfom-label-pods` namespace.
 
 ## Source code
 
-[https://github.com/ministryofjustice/cloud-platform-label-pods](https://github.com/ministryofjustice/cloud-platform-label-pods)
+[https://github.com/ministryofjustice/cloud-platform-terraform-label-pods](https://github.com/ministryofjustice/cloud-platform-terraform-label-pods)
