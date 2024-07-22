@@ -15,6 +15,11 @@ spec:
       labels:
         app.kubernetes.io/name: {{ include "helloworld.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
+        kube-monkey/enabled: enabled
+        kube-monkey/identifier: monkey-victim
+        kube-monkey/mtbf: '1'
+        kube-monkey/kill-mode: "fixed"
+        kube-monkey/kill-value: '1'
     spec:
     {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
