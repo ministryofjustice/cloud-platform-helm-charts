@@ -1,0 +1,19 @@
+{{- if .Values.serviceMonitor.enabled }}
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: {{ include "aws-subnet-exporter.fullname" . }}
+  labels:
+    {{- include "aws-subnet-exporter.labels" . | nindent 4 }}
+    {{- if .Values.serviceMonitor.additionalLabels }}
+{{ toYaml .Values.serviceMonitor.additionalLabels | indent 4 -}}
+    {{- end }}
+spec:
+  endpoints:
+    - interval: 60s
+      port: http
+      path: /metrics
+  selector:
+    matchLabels:
+      {{- include "aws-subnet-exporter.selectorLabels" . | nindent 6 }}
+{{- end }}

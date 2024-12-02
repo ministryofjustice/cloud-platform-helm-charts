@@ -19,9 +19,9 @@ Keep in mind two things:
 1) Source code of helm charts are inside the *main* branch, 
 2) Artifacts inside *gh-pages* branch which are the ones publicly distributed and available in url [https://ministryofjustice.github.io/cloud-platform-helm-charts](https://ministryofjustice.github.io/cloud-platform-helm-charts)
 
-If you want to include a new helm chart of amend existing helm chart to create new artifacts(with latest chart version) and publish the artifacts follow the below steps
+If you want to include a new helm chart or amend existing helm chart to create new artifacts(with latest chart version) and publish the artifacts follow the below steps
 
-- Build the artifacts tarballs(`tgz`) using the below command
+- Build the artifacts tarballs(`tgz`) using the command:
 `helm package <chart-name>`
 
 - Regenerate `index.yaml`
