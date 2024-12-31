@@ -23,8 +23,9 @@ spec:
 {{- if .Values.serviceMonitor.timeout }}
     scrapeTimeout: {{ .Values.serviceMonitor.scapeTimeout }}
 {{- end }}
+    metricRelabeling:
 {{- if .Values.serviceMonitor.metricRelabelings }}
-{{ toYaml .Values.serviceMonitor.metricRelabelings | indent 4}}
+{{- toYaml .Values.serviceMonitor.metricRelabelings | nindent 4 }}
 {{- end }}
   jobLabel: {{ template "prometheus-ecr-exporter.fullname" . }}
   namespaceSelector:
