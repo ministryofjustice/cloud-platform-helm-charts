@@ -23,7 +23,7 @@ spec:
 {{- if .Values.serviceMonitor.timeout }}
     scrapeTimeout: {{ .Values.serviceMonitor.scapeTimeout }}
 {{- end }}
-    metricRelabeling:
+    metricRelabelings:
 {{- if .Values.serviceMonitor.metricRelabelings }}
 {{- toYaml .Values.serviceMonitor.metricRelabelings | nindent 4 }}
 {{- end }}
