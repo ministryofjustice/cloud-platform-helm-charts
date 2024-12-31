@@ -48,6 +48,12 @@ serviceMonitor:
   # labels:
   # Set timeout for scrape
   # timeout: 10s
+  # Set metric relabelings for the ServiceMonitor. Use this to adjust your resulting labels as needed.
+  # metricRelabelings:
+  #   - action: replace
+  #     sourceLabels: ["custom"]
+  #     targetLabel: custom
+  #     replacement: someValue
 
 aws:
   region: eu-west-2
