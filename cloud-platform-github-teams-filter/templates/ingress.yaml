@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: github-teams-filter-ingress
+  namespace: cloud-platform-github-teams-filter
+  annotations:
+    external-dns.alpha.kubernetes.io/set-identifier: github-teams-filter-ingress-cloud-platform-github-teams-filter-green
+    external-dns.alpha.kubernetes.io/aws-weight: "100"
+spec:
+  ingressClassName: default
+  tls:
+    - hosts:
+        - {{ .Values.hostName }}
+  rules:
+    - host: {{ .Values.hostName }}
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: github-teams-filter-service
+                port:
+                  number: 8080

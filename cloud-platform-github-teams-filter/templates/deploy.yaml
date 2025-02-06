@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: github-teams-filter-deployment
+  namespace: cloud-platform-github-teams-filter
+  labels:
+    app: filter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: github-teams-filter-app
+  template:
+    metadata:
+      labels:
+        app: github-teams-filter-app
+    spec:
+      containers:
+        - name: github-teams-filter-api
+          image: '{{ .Values.ecrUrl }}:{{ .Values.imageTag }}'
+          ports:
+            - containerPort: 8080
+          env:
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: api-key
+                  key: api-key
+      serviceAccountName: get-rolebindings
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: github-teams-filter-service
+  namespace: cloud-platform-github-teams-filter
+spec:
+  selector:
+    app: github-teams-filter-app
+  ports:
+    - name: https
+      port: 8080
+      targetPort: 8080

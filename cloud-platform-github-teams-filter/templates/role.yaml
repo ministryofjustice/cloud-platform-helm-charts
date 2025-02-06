@@ -1,0 +1,27 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: read-rolebindings
+rules:
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["rolebindings"]
+  verbs: ["get", "list", "watch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: read-rolebindings
+subjects:
+- kind: ServiceAccount
+  name: get-rolebindings
+  namespace: cloud-platform-github-teams-filter
+roleRef:
+  kind: ClusterRole
+  name: read-rolebindings
+  apiGroup: rbac.authorization.k8s.io
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: get-rolebindings
+  namespace: cloud-platform-github-teams-filter

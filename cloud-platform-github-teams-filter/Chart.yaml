@@ -1,0 +1,6 @@
+apiVersion: v2
+name: cloud-platform-label-pods
+description: A Helm chart for filtering a list of github teams to remove any that are NOT client teams of the cloud platform
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
