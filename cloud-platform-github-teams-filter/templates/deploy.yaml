@@ -24,9 +24,9 @@ spec:
             - name: API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: api-key
+                  name: github-teams-filter-secret
                   key: api-key
-      serviceAccountName: get-rolebindings
+      serviceAccountName: github-teams-filter-get-rolebindings
 ---
 apiVersion: v1
 kind: Service
