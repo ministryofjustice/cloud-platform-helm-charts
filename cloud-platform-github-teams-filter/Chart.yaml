@@ -2,5 +2,5 @@ apiVersion: v2
 name: cloud-platform-github-teams-filter
 description: A Helm chart for filtering a list of github teams to remove any that are NOT client teams of the cloud platform
 type: application
-version: 1.0.0
+version: 1.0.1
 appVersion: "1.0.0"

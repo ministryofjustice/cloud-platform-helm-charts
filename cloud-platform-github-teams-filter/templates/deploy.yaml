@@ -26,6 +26,8 @@ spec:
                 secretKeyRef:
                   name: github-teams-filter-secret
                   key: api-key
+            - name: GIN_MODE
+              value: {{ .Values.logLevel }}
       serviceAccountName: github-teams-filter-get-rolebindings
 ---
 apiVersion: v1
