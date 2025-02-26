@@ -9,6 +9,8 @@ metadata:
 {{ include "helloworld.labels" . | indent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
+    external-dns.alpha.kubernetes.io/set-identifier: {{ $fullName }}-{{ .Release.Namespace }}-green
+    external-dns.alpha.kubernetes.io/aws-weight: "100"
     {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
